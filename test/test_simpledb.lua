@@ -1,16 +1,21 @@
 local lu = require "luaunit"
 local skynet = require "skynet"
+require "skynet.manager"
 
-skynet.init(function ()
-    skynet.newservice('simpledb')
-end)
-
-
+local sdb
 local t = {}
 
-function t:test_setget()
-    skynet.call('SIMPLEDB', 'lua', 'set', 'aaa', 111)
-    local r = skynet.call('SIMPLEDB', 'lua', 'get', 'aaa')
+function t.setup()
+    sdb = skynet.newservice('simpledb')
+end
+
+function t.teardown()
+    skynet.kill(sdb)
+end
+
+function t.test_setget()
+    skynet.call(sdb, 'lua', 'set', 'aaa', 111)
+    local r = skynet.call(sdb, 'lua', 'get', 'aaa')
     lu.assertEquals(r, 111)
 end
 
