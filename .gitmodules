@@ -1,0 +1,6 @@
+[submodule "3rd/skynet"]
+	path = 3rd/skynet
+	url = https://github.com/cloudwu/skynet.git
+[submodule "3rd/luaunit"]
+	path = 3rd/luaunit
+	url = https://github.com/bluebird75/luaunit

@@ -1,0 +1,16 @@
+{
+    "Lua.diagnostics.severity": {
+    
+    },
+    "Lua.workspace.library": {
+        "3rd/luauint":true,
+        "./test":true
+    },
+    "Lua.runtime.path": [
+        "?.lua",
+        "?/init.lua",
+        "?/?.lua",
+        "?/test/?.lua"
+    ],
+    "Lua.workspace.ignoreSubmodules": false
+}
